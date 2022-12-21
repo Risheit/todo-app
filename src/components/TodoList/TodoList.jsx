@@ -3,7 +3,7 @@ import './TodoList.css'
 import { toggleTaskStatus } from '../../models/Task'
 
 
-export const TodoList = (props) => {
+const TodoList = (props) => {
 
   const [tasks, setTasks] = useState(props.tasks);
 
@@ -34,3 +34,5 @@ export const TodoList = (props) => {
     </ul>
   );
 };
+
+export default TodoList;
