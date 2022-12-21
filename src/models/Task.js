@@ -1,4 +1,4 @@
-export default class Task {
+class Task {
     #text;
     #isComplete;
 
@@ -14,4 +14,5 @@ export default class Task {
 const toggleTaskStatus = (task) =>
     new Task(task.text(), !task.isComplete());
 
+export default Task;
 export { toggleTaskStatus };
