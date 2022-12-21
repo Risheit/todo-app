@@ -10,7 +10,7 @@ export const TodoList = (props) => {
   const handleClick = (task) => {
     const tasksCopy = [...tasks]
       .filter(state => state !== task)
-      .concat([toggleTaskStatus(task)])
+      .concat([toggleTaskStatus(task)]);
 
     setTasks(tasksCopy);    
     console.log(task.text() + ' was clicked!');
