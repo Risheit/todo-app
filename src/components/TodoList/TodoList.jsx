@@ -4,19 +4,15 @@ import { toggleTaskStatus } from '../../models/Task'
 
 
 const TodoList = (props) => {
-
-  const [tasks, setTasks] = useState(props.tasks);
-
   const handleClick = (task) => {
-    const tasksCopy = [...tasks]
+    const tasksCopy = [...props.tasks]
       .filter(state => state !== task)
       .concat([toggleTaskStatus(task)]);
 
-    setTasks(tasksCopy);    
-    console.log(task.text() + ' was clicked!');
+    props.setTasks(tasksCopy);    
   };
 
-  const taskViews = tasks.map((task, index) => (
+  const taskViews = props.tasks.map((task, index) => (
     <li key={index} className={task.isComplete() ? 'complete' : 'incomplete'}
       onClick={_event => handleClick(task)}
     >
