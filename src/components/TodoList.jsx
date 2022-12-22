@@ -21,12 +21,12 @@ const TodoList = (props) => {
       action onClick={() => handleClick(task)}
       className={task.isComplete() ? complete : incomplete}
     >
-      {task.text()}
+      {task.isComplete() ? <del>{task.text()}</del> : task.text()}
     </ListGroup.Item>
   ));
 
-  const unfinishedTasks = taskViews.filter(task => task.props.className === complete);
-  const finishedTasks = taskViews.filter(task => task.props.className === incomplete);
+  const unfinishedTasks = taskViews.filter(task => task.props.className === incomplete);
+  const finishedTasks = taskViews.filter(task => task.props.className === complete);
 
   return (
     <ListGroup as='ul'>
