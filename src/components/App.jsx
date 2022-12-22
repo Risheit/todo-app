@@ -43,7 +43,7 @@ const App = () => {
 
   return (
     <div className='App'>
-      <Button onClick={() => setTaskBeingAdded(true)}>
+      <Button className='my-2' onClick={() => setTaskBeingAdded(true)}>
         Add Task
       </Button>
       <AddTaskLightbox
