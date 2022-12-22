@@ -1,7 +1,7 @@
-import Task from '../models/Task';
-import TodoList from './TodoList';
 import { useState } from 'react';
 import { Button, Form, Modal } from 'react-bootstrap';
+import Task from '../models/Task';
+import TodoList from './TodoList';
 
 
 const AddTaskLightbox = (props) => {
