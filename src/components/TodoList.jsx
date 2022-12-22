@@ -1,6 +1,7 @@
 import React from 'react';
 import { ListGroup } from 'react-bootstrap';
 import { toggleTaskStatus } from '../models/Task';
+// import './scss/TodoList.scss';
 
 const TodoList = (props) => {
   const complete = 'complete';
