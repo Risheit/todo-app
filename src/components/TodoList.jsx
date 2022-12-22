@@ -1,6 +1,6 @@
-import  React from 'react';
-import { toggleTaskStatus } from '../models/Task'
-
+import React from 'react';
+import { ListGroup } from 'react-bootstrap';
+import { toggleTaskStatus } from '../models/Task';
 
 const TodoList = (props) => {
   const handleClick = (task) => {
@@ -11,22 +11,33 @@ const TodoList = (props) => {
     props.setTasks(tasksCopy);    
   };
 
-  const taskViews = props.tasks.map((task, index) => (
-    <li key={index} className={task.isComplete() ? 'complete' : 'incomplete'}
-      onClick={_event => handleClick(task)}
+  const taskViews = props.tasks.map((task) => (
+    <ListGroup.Item
+      as='li'
+      action onClick={() => handleClick(task)}
+      disabled={task.isComplete()}
     >
       {task.text()}
-    </li>
+    </ListGroup.Item>
   ));
 
-  const unfinishedTasks = taskViews.filter(task => task.props.className === 'incomplete');
-  const finishedTasks = taskViews.filter(task => task.props.className === 'complete');
-  
+  // const taskViews = props.tasks.map((task, index) => (
+  //   <li key={index} className={task.isComplete() ? 'complete' : 'incomplete'}
+  //     onClick={_event => handleClick(task)}
+  //   >
+  //     {task.text()}
+  //   </li>
+  // ));
+
+  const unfinishedTasks = taskViews.filter(task => task.props.disabled === false);
+  const finishedTasks = taskViews.filter(task => task.props.disabled === true);
+  console.log(taskViews);
+
   return (
-    <ul className='todo-list'>
+    <ListGroup as='ul'>
       {unfinishedTasks}
       {finishedTasks}
-    </ul>
+    </ListGroup>
   );
 };
 
