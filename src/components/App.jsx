@@ -1,5 +1,5 @@
-import Task from '../../models/Task';
-import TodoList from '../TodoList/TodoList';
+import Task from '../models/Task';
+import TodoList from './TodoList';
 import { useState } from 'react';
 import { Button, Form, Modal } from 'react-bootstrap';
 

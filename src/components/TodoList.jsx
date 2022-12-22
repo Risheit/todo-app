@@ -1,6 +1,5 @@
-import { React, useState } from 'react';
-import './TodoList.css'
-import { toggleTaskStatus } from '../../models/Task'
+import  React from 'react';
+import { toggleTaskStatus } from '../models/Task'
 
 
 const TodoList = (props) => {
